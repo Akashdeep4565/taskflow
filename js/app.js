@@ -11,13 +11,24 @@ function filteredTasks() {
 
 document.getElementById("taskForm").addEventListener("submit", e => {
     e.preventDefault();
-    const input = document.getElementById("taskInput");
 
-    tasks.push({ text: input.value, completed: false });
+    const input = document.getElementById("taskInput");
+    const priority = document.getElementById("priority").value;
+const dueDate = document.getElementById("dueDate").value;
+
+tasks.push({
+    text: input.value,
+    completed: false,
+    priority: priority,
+    dueDate: dueDate
+});
+
+
     Storage.saveTasks(tasks);
     input.value = "";
     UI.render(filteredTasks());
 });
+
 
 document.querySelectorAll(".filters button").forEach(btn => {
     btn.addEventListener("click", () => {

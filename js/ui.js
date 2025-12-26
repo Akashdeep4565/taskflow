@@ -6,15 +6,20 @@ const UI = {
         tasks.forEach((task, index) => {
             const li = document.createElement("li");
 
-            li.innerHTML = `
-                <span class="${task.completed ? 'completed' : ''}">
-                    ${task.text}
-                </span>
-                <div>
-                    <button onclick="UI.toggle(${index})">✔</button>
-                    <button onclick="UI.remove(${index})">✖</button>
-                </div>
-            `;
+           li.innerHTML = `
+    <span class="${task.completed ? 'completed' : ''}">
+        ${task.text}
+        <small class="priority ${task.priority.toLowerCase()}">
+            (${task.priority})
+        </small>
+         ${task.dueDate ? `<br><small>📅 ${task.dueDate}</small>` : ""}
+    </span>
+    <div>
+        <button onclick="UI.toggle(${index})">✔</button>
+        <button onclick="UI.remove(${index})">✖</button>
+    </div>
+`;
+
             list.appendChild(li);
         });
     },

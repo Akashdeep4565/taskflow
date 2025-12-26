@@ -14,7 +14,13 @@
     <!-- Task Input -->
     <form id="taskForm">
         <input type="text" id="taskInput" placeholder="Enter a task..." required>
-        <button>Add</button>
+        <select id="priority">
+    <option value="High">High</option>
+    <option value="Medium" selected>Medium</option>
+    <option value="Low">Low</option>
+</select>
+    <input type="date" id="dueDate">
+    <button>Add</button>
     </form>
 
     <!-- Filters -->
