@@ -3,8 +3,18 @@ const UI = {
         const list = document.getElementById("taskList");
         list.innerHTML = "";
 
+        if (tasks.length === 0) {
+            list.innerHTML = `
+                <li style="justify-content:center; opacity:0.6;">
+                    📝 No tasks yet. Add your first task!
+                </li>
+            `;
+            return;
+        }
+
         tasks.forEach((task, index) => {
             const li = document.createElement("li");
+        li.className = task.priority.toLowerCase();
 
            li.innerHTML = `
     <span class="${task.completed ? 'completed' : ''}">
