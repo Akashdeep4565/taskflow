@@ -4,8 +4,10 @@ A simple yet powerful task management web app built using
 HTML, CSS, and JavaScript.
 
 ## Features
-- Add, delete, complete tasks
-- Filter tasks
+- Add, delete, and complete tasks
+- Filter tasks (All / Active / Completed)
+- Set task priority (High / Medium / Low)
+- Add optional due dates to tasks
 - Persistent storage using LocalStorage
 
 ## Tech Stack
